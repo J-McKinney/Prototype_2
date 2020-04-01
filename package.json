@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SoLiD513/SpeechToText.git"
+    "url": "git+https://github.com/SoLiD513/Prototype_2.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SoLiD513/SpeechToText/issues"
+    "url": "https://github.com/SoLiD513/Prototype_2/issues"
   },
-  "homepage": "https://github.com/SoLiD513/SpeechToText#readme",
+  "homepage": "https://github.com/SoLiD513/Prototype_2#readme",
   "dependencies": {
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",

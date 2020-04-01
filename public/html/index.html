@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <header>
-    <title>SpeechToTextJQuerywithDB</title>
+    <title>Prototype_2</title>
     <link rel='stylesheet' href='../style/reset.css'>
     <!-- BootStrap -->
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
@@ -22,7 +22,6 @@
 </header>
 
 <body>
-
     <div class="jumbotron" id="buttonJumbotron">
         <div class='container'>
             <div class='row' id="buttonRow">
@@ -30,22 +29,17 @@
                     <button type="button" class="btn btn-success" id="startButton">Start Recording</button>
                 </div>
                 <div class='col-md-3'>
-                    <button type="button" class="btn btn-warning" id="stopButton">Stop Recording</button>
+                    <button type="button" class="btn btn-warning" id="stopButton" disabled>Stop Recording</button>
                 </div>
                 <div class='col-md-3'>
-                    <button type="button" class="btn btn-danger" id="resetButton">Reset Transcript</button>
+                    <button type="button" class="btn btn-primary" id="submitButton" disabled>Submit Transcript</button>
                 </div>
                 <div class='col-md-3'>
-                    <button type="button" class="btn btn-primary" id="submitButton">Submit Transcript</button>
+                    <button type="button" class="btn btn-danger" id="resetButton" disabled>Reset Transcript</button>
                 </div>
             </div>
         </div>
     </div>
-
-    <br />
-    <hr />
-    <br />
-
     <div class="jumbotron" id="transcriptJumbotron">
         <div class="container">
             <div class="row">
@@ -53,9 +47,7 @@
             </div>
         </div>
     </div>
-
     <button id="clear-all">Clear All Submits</button>
-
     <div class="jumbotron" id="submitFieldJumbotron">
         <div class="container">
             <div class="row">
@@ -63,8 +55,8 @@
             </div>
         </div>
     </div>
-
 </body>
+
 <script type='text/javascript' src='../js/magic.js'></script>
 
 </html>
