@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import "./styles/Dictaphone.css";
+import "./Dictaphone.css";
 
 //------------------------SPEECH RECOGNITION-----------------------------
 
@@ -31,7 +31,7 @@ class Dictaphone extends Component {
       sentence: "",
       // Setting state for the react-mic
       downloadLinkURL: null,
-      isRecording: false
+      isRecording: false,
     };
 
     this.toggleListen = this.toggleListen.bind(this);
@@ -54,7 +54,7 @@ class Dictaphone extends Component {
   }
 
   // Toggle listening commands when the Start/Stop button is pressed
-  toggleListen() {
+  toggleListen = () => {
     this.setState(
       {
         // speech recognition
@@ -65,10 +65,10 @@ class Dictaphone extends Component {
       // speech recognition
       this.handleListen
     );
-  }
+  };
 
   // speech recognition
-  handleListen() {
+  handleListen = () => {
     if (this.state.listening) {
       recognition.start();
 
@@ -100,10 +100,8 @@ class Dictaphone extends Component {
         else interimTranscript += transcript;
         // console.log(finalTranscript);
       }
-      document.getElementById(
-        "interimTranscript"
-      ).innerHTML = interimTranscript;
-      document.getElementById("finalTranscript").innerHTML = finalTranscript;
+      // document.getElementById("interimTranscript").innerHTML = interimTranscript;
+      // document.getElementById("finalTranscript").innerHTML = finalTranscript;
 
       //-------------------------COMMANDS------------------------------------
       // speech recognition
@@ -117,7 +115,7 @@ class Dictaphone extends Component {
         recognition.stop();
         recognition.onend = () => {
           const finalText = transcriptArr.slice(0, -3).join(" ");
-          document.getElementById("finalTranscript").innerHTML = finalText;
+          // document.getElementById("finalTranscript").innerHTML = finalText;
         };
       }
       this.setState({ sentence: transcriptArr[0] });
@@ -129,15 +127,17 @@ class Dictaphone extends Component {
     recognition.onerror = (event) => {
       console.log("Error occurred in recognition: " + event.error);
     };
-  }
+  };
 
   // speech recognition
   // Reset the interim and final transcript to not display anymore
   resetTranscripts() {
-    document.getElementById("interimTranscript").innerHTML = interimTranscript =
-      "";
-    document.getElementById("finalTranscript").innerHTML = finalTranscript = "";
+    // document.getElementById("interimTranscript").innerHTML = interimTranscript =
+    //   "";
+    // document.getElementById("finalTranscript").innerHTML = finalTranscript = "";
     // console.log("All Records Cleared");
+    interimTranscript = "";
+    finalTranscript = "";
   }
 
   // speech recognition
@@ -246,13 +246,13 @@ class Dictaphone extends Component {
             </Row>
           </Container>
           <Container id="finalTranscriptContainer">
-            <div id="interimTranscript" />
+            <div id="interimTranscript">{interimTranscript}</div>
             <div
               id="finalTranscript"
               value={this.state.sentence}
               onChange={this.handleInputChange}
-            >
-              <br />
+            >{finalTranscript}
+              {console.log(finalTranscript)}
             </div>
           </Container>
           <Container id="buttonContainer">

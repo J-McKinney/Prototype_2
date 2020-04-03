@@ -1,11 +1,14 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dictaphone from "./components/SpeechRecognition/SpeechRecognition";
 
 function App() {
   return (
-    <>
-      <Dictaphone />
-    </>
+    <Router>
+      <Switch>
+        <Route component={Dictaphone} />
+      </Switch>
+    </Router>
   );
 }
 
