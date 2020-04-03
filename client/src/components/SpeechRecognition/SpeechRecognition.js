@@ -31,7 +31,7 @@ class Dictaphone extends Component {
       sentence: "",
       // Setting state for the react-mic
       downloadLinkURL: null,
-      isRecording: false,
+      isRecording: false
     };
 
     this.toggleListen = this.toggleListen.bind(this);
@@ -43,9 +43,14 @@ class Dictaphone extends Component {
     // this.randomColorGenerator = this.randomColorGenerator.bind(this);
   }
   componentDidMount() {
-    console.log("");
-    console.log("Listening is set to " + this.state.listening);
-    console.log("isRecording is set to " + this.state.isRecording);
+    // console.log("");
+    // console.log("Listening is set to " + this.state.listening);
+    // console.log("isRecording is set to " + this.state.isRecording);
+  }
+  componentDidUpdate() {
+    // console.log("");
+    // console.log("Listening is set to " + this.state.listening);
+    // console.log("isRecording is set to " + this.state.isRecording);
   }
 
   // Toggle listening commands when the Start/Stop button is pressed
@@ -76,7 +81,6 @@ class Dictaphone extends Component {
         // console.log("...continue listening...");
         recognition.start();
       };
-      // };
     } else {
       // } if (!this.state.listening) {
       recognition.stop();
@@ -104,7 +108,8 @@ class Dictaphone extends Component {
       //-------------------------COMMANDS------------------------------------
       // speech recognition
       // If the user says and the SpeechRec recognizes, "stop listening", the program turns off the recorder
-      // and stops listening
+      // and stops listening if no space between the double quotes in this block then, the program reads
+      // everything like one big long sentence instead of individual strings
       const transcriptArr = finalTranscript.split("  ");
       const stopCmd = transcriptArr.slice(-3, -1);
       // console.log("stopCmd", stopCmd);
