@@ -27,8 +27,10 @@ class Dictaphone extends Component {
     super(props);
     // Setting state for the SpeechRec, all speeches and each individual sentence before submit
     this.state = {
-      listening: false,
       sentence: "",
+      finalText: "",
+      // speech recognition
+      listening: false,
       // Setting state for the react-mic
       downloadLinkURL: null,
       isRecording: false,
@@ -114,7 +116,7 @@ class Dictaphone extends Component {
       if (stopCmd[0] === "stop" && stopCmd[1] === "listening") {
         recognition.stop();
         recognition.onend = () => {
-          const finalText = transcriptArr.slice(0, -3).join(" ");
+          // const finalText = transcriptArr.slice(0, -3).join(" ");
           // document.getElementById("finalTranscript").innerHTML = finalText;
         };
       }
@@ -251,8 +253,7 @@ class Dictaphone extends Component {
               id="finalTranscript"
               value={this.state.sentence}
               onChange={this.handleInputChange}
-            >{finalTranscript}
-              {console.log(finalTranscript)}
+            >{this.state.sentence}
             </div>
           </Container>
           <Container id="buttonContainer">
