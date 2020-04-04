@@ -25,10 +25,9 @@ let randomWordArr = ["Incredible"];
 class Dictaphone extends Component {
   constructor(props) {
     super(props);
-    // Setting state for the SpeechRec, all speeches and each individual sentence before submit
     this.state = {
+      // Setting state for each individual sentence before submit
       sentence: "",
-      // finalText: "",
       // speech recognition
       listening: false,
       // Setting state for the react-mic
