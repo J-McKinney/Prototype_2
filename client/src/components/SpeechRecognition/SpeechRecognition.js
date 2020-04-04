@@ -28,7 +28,7 @@ class Dictaphone extends Component {
     // Setting state for the SpeechRec, all speeches and each individual sentence before submit
     this.state = {
       sentence: "",
-      finalText: "",
+      // finalText: "",
       // speech recognition
       listening: false,
       // Setting state for the react-mic
@@ -102,8 +102,8 @@ class Dictaphone extends Component {
         else interimTranscript += transcript;
         // console.log(finalTranscript);
       }
-      // document.getElementById("interimTranscript").innerHTML = interimTranscript;
-      // document.getElementById("finalTranscript").innerHTML = finalTranscript;
+      document.getElementById("interimTranscript").innerHTML = interimTranscript;
+      document.getElementById("finalTranscript").innerHTML = finalTranscript;
 
       //-------------------------COMMANDS------------------------------------
       // speech recognition
@@ -116,8 +116,8 @@ class Dictaphone extends Component {
       if (stopCmd[0] === "stop" && stopCmd[1] === "listening") {
         recognition.stop();
         recognition.onend = () => {
-          // const finalText = transcriptArr.slice(0, -3).join(" ");
-          // document.getElementById("finalTranscript").innerHTML = finalText;
+          const finalText = transcriptArr.slice(0, -3).join(" ");
+          document.getElementById("finalTranscript").innerHTML = finalText;
         };
       }
       this.setState({ sentence: transcriptArr[0] });
@@ -245,12 +245,12 @@ class Dictaphone extends Component {
             </Row>
           </Container>
           <Container id="finalTranscriptContainer">
-            <div id="interimTranscript">{interimTranscript}</div>
+            <div id="interimTranscript"></div>
             <div
               id="finalTranscript"
               value={this.state.sentence}
               onChange={this.handleInputChange}
-            >{this.state.sentence}
+            ><br />
             </div>
           </Container>
           <Container id="buttonContainer">

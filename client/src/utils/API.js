@@ -1,20 +1,20 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
-  getSpeeches: function() {
-    return axios.get("/api/speeches");
+  // Gets all sentences
+  getSentences: function() {
+    return axios.get("/api/sentence");
   },
-  // Gets the book with the given id
-  getSpeech: function(id) {
-    return axios.get("/api/speeches/" + id);
+  // Gets the sentence with the given id
+  getSentence: function(id) {
+    return axios.get("/api/sentence/" + id);
   },
-  // Deletes the book with the given id
-  deleteSpeech: function(id) {
-    return axios.delete("/api/speeches/" + id);
+  // Deletes the sentence with the given id
+  deleteSentence: function(id) {
+    return axios.delete("/api/sentence/" + id);
   },
-  // Saves a book to the database
-  saveSpeech: function(speechData) {
-    return axios.post("/api/speeches", speechData);
+  // Saves a sentence to the database
+  saveSentence: function(sentenceData) {
+    return axios.post("/api/sentence", sentenceData);
   }
 };
