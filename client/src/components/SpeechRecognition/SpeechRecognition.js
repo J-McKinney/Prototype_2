@@ -134,12 +134,9 @@ class Dictaphone extends Component {
   // speech recognition
   // Reset the interim and final transcript to not display anymore
   resetTranscripts() {
-    // document.getElementById("interimTranscript").innerHTML = interimTranscript =
-    //   "";
-    // document.getElementById("finalTranscript").innerHTML = finalTranscript = "";
+    document.getElementById("interimTranscript").innerHTML = interimTranscript = "";
+    document.getElementById("finalTranscript").innerHTML = finalTranscript = "";
     // console.log("All Records Cleared");
-    interimTranscript = "";
-    finalTranscript = "";
   }
 
   // speech recognition
