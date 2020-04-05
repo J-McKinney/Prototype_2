@@ -44,14 +44,8 @@ class Dictaphone extends Component {
     // this.randomColorGenerator = this.randomColorGenerator.bind(this);
   }
   componentDidMount() {
-    // console.log("");
-    // console.log("Listening is set to " + this.state.listening);
-    // console.log("isRecording is set to " + this.state.isRecording);
   }
   componentDidUpdate() {
-    // console.log("");
-    // console.log("Listening is set to " + this.state.listening);
-    // console.log("isRecording is set to " + this.state.isRecording);
   }
 
   // Toggle listening commands when the Start/Stop button is pressed
