@@ -49,10 +49,13 @@ class Dictaphone extends Component {
   componentDidMount() {
     audioCtx.resume()
   }
-  componentDidUpdate() {}
+  componentDidUpdate() {
+    audioCtx.resume()
+  }
 
   // Toggle listening commands when the Start/Stop button is pressed
   toggleListen = () => {
+    audioCtx.resume()
     this.setState(
       {
         // speech recognition
