@@ -9,9 +9,13 @@ import "./Dictaphone.css";
 
 //------------------------SPEECH RECOGNITION-----------------------------
 
-window.SpeechRecognition =
-  window.SpeechRecognition || window.webkitSpeechRecognition;
-let recognition = new window.SpeechRecognition();
+var AudioContext = window.AudioContext || window.webkitAudioContext;
+var audioCtx = new AudioContext();
+console.log(audioCtx);
+
+var SpeechRecognition =
+window.SpeechRecognition || window.webkitSpeechRecognition;
+var recognition = new SpeechRecognition();
 
 recognition.continous = true;
 recognition.maxAlternatives = 10;
@@ -43,10 +47,8 @@ class Dictaphone extends Component {
     this.randomWordGenerator = this.randomWordGenerator.bind(this);
     // this.randomColorGenerator = this.randomColorGenerator.bind(this);
   }
-  componentDidMount() {
-  }
-  componentDidUpdate() {
-  }
+  componentDidMount() {}
+  componentDidUpdate() {}
 
   // Toggle listening commands when the Start/Stop button is pressed
   toggleListen = () => {
@@ -95,7 +97,9 @@ class Dictaphone extends Component {
         else interimTranscript += transcript;
         // console.log(finalTranscript);
       }
-      document.getElementById("interimTranscript").innerHTML = interimTranscript;
+      document.getElementById(
+        "interimTranscript"
+      ).innerHTML = interimTranscript;
       document.getElementById("finalTranscript").innerHTML = finalTranscript;
 
       //-------------------------COMMANDS------------------------------------
@@ -127,7 +131,8 @@ class Dictaphone extends Component {
   // speech recognition
   // Reset the interim and final transcript to not display anymore
   resetTranscripts() {
-    document.getElementById("interimTranscript").innerHTML = interimTranscript = "";
+    document.getElementById("interimTranscript").innerHTML = interimTranscript =
+      "";
     document.getElementById("finalTranscript").innerHTML = finalTranscript = "";
     // console.log("All Records Cleared");
   }
@@ -184,12 +189,6 @@ class Dictaphone extends Component {
     document.getElementById("randomWordPlacement").innerHTML = word;
   }
 
-  // randomColorGenerator() {
-  //   var randomColor = Math.floor(Math.random() * randomColorArr.length);
-  //   var color = randomColorArr[randomColor];
-  //   console.log(color);
-  // }
-
   render() {
     // react-mic
     const { blobURL, isRecording } = this.state;
@@ -243,7 +242,8 @@ class Dictaphone extends Component {
               id="finalTranscript"
               value={this.state.sentence}
               onChange={this.handleInputChange}
-            ><br />
+            >
+              <br />
             </div>
           </Container>
           <Container id="buttonContainer">
