@@ -7,9 +7,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import "./Dictaphone.css";
 
-var AudioContext = window.AudioContext || window.webkitAudioContext;
-// var audioCtx = new AudioContext().resume();
-
 //------------------------SPEECH RECOGNITION-----------------------------
 
 var SpeechRecognition =
@@ -47,7 +44,6 @@ class Dictaphone extends Component {
     // this.randomColorGenerator = this.randomColorGenerator.bind(this);
   }
   componentDidMount() {
-    new AudioContext().resume()
   }
   componentDidUpdate() {
   }
