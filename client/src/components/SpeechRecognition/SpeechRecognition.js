@@ -7,6 +7,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import "./Dictaphone.css";
 
+var AudioContext = window.AudioContext || window.webkitAudioContext;
+var audioCtx = new AudioContext();
+
 //------------------------SPEECH RECOGNITION-----------------------------
 
 var SpeechRecognition =
@@ -50,6 +53,7 @@ class Dictaphone extends Component {
 
   // Toggle listening commands when the Start/Stop button is pressed
   toggleListen = () => {
+    audioCtx.resume()
     this.setState(
       {
         // speech recognition
