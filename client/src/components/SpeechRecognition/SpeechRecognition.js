@@ -8,7 +8,7 @@ import Row from "react-bootstrap/Row";
 import "./Dictaphone.css";
 
 var AudioContext = window.AudioContext || window.webkitAudioContext;
-var audioCtx = new AudioContext();
+// var audioCtx = new AudioContext().resume();
 
 //------------------------SPEECH RECOGNITION-----------------------------
 
@@ -47,15 +47,13 @@ class Dictaphone extends Component {
     // this.randomColorGenerator = this.randomColorGenerator.bind(this);
   }
   componentDidMount() {
-    audioCtx.resume()
+    new AudioContext().resume()
   }
   componentDidUpdate() {
-    audioCtx.resume()
   }
 
   // Toggle listening commands when the Start/Stop button is pressed
   toggleListen = () => {
-    audioCtx.resume()
     this.setState(
       {
         // speech recognition
