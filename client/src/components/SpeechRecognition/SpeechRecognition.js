@@ -10,7 +10,7 @@ import "./Dictaphone.css";
 //------------------------SPEECH RECOGNITION-----------------------------
 
 var SpeechRecognition =
-window.SpeechRecognition || window.webkitSpeechRecognition;
+  window.SpeechRecognition || window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
 
 recognition.continous = true;
@@ -20,6 +20,24 @@ recognition.lang = "en-US";
 let finalTranscript = "";
 let interimTranscript = "";
 let randomWordArr = ["Incredible"];
+
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  //   console.log("It's Working!");
+  navigator.mediaDevices
+    .getUserMedia({ audio: true })
+    // Success callback
+    .then(function (stream) {
+      var mediaRecorder = new MediaRecorder(stream);
+        mediaRecorder.start();
+      // console.log(mediaRecorder);
+    })
+    // Error callback
+    .catch(function (err) {
+      console.log("The following getUserMedia error occured: " + err);
+    });
+} else {
+  console.log("getUserMedia not supported on your browser!");
+}
 
 //------------------------COMPONENT-----------------------------
 class Dictaphone extends Component {
@@ -43,10 +61,8 @@ class Dictaphone extends Component {
     this.randomWordGenerator = this.randomWordGenerator.bind(this);
     // this.randomColorGenerator = this.randomColorGenerator.bind(this);
   }
-  componentDidMount() {
-  }
-  componentDidUpdate() {
-  }
+  componentDidMount() {}
+  componentDidUpdate() {}
 
   // Toggle listening commands when the Start/Stop button is pressed
   toggleListen = () => {
