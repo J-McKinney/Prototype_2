@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import "./Dictaphone.css";
+import "./SpeechRecognition.css";
 
 //------------------------SPEECH RECOGNITION-----------------------------
 
@@ -122,15 +122,15 @@ class Dictaphone extends Component {
       // and stops listening if no space between the double quotes in this block then, the program reads
       // everything like one big long sentence instead of individual strings
       const transcriptArr = finalTranscript.split("  ");
-      const stopCmd = transcriptArr.slice(-3, -1);
+      // const stopCmd = transcriptArr.slice(-3, -1);
       // console.log("stopCmd", stopCmd);
-      if (stopCmd[0] === "stop" && stopCmd[1] === "listening") {
-        recognition.stop();
-        recognition.onend = () => {
-          const finalText = transcriptArr.slice(0, -3).join(" ");
-          document.getElementById("finalTranscript").innerHTML = finalText;
-        };
-      }
+      // if (stopCmd[0] === "stop" && stopCmd[1] === "listening") {
+      //   recognition.stop();
+      //   recognition.onend = () => {
+      //     const finalText = transcriptArr.slice(0, -3).join(" ");
+      //     document.getElementById("finalTranscript").innerHTML = finalText;
+      //   };
+      // }
       this.setState({ sentence: transcriptArr[0] });
       // console.log(transcriptArr[0]);
     };
