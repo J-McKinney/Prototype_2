@@ -1,12 +1,100 @@
+#landingWrapper {
+  background-size: cover;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  box-sizing: border-box;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#titleContainer {
+  text-align: center;
+  justify-content: center;
+  /* width: 100%; */
+  /* box-shadow: 7px 7px 7px rgb(0, 0, 0); */
+  box-shadow: 7px 7px 7px 7px rgb(0, 0, 0);
+  padding: 0 0 0 0;
+  margin: 5% 2% 0 2%;
+  height: fit-content;
+}
+
+#titleRow {
+  text-align: center;
+  justify-content: center;
+  height: fit-content;
+  padding: 0 0 0 0;
+  margin: 2% 2% 2% 2%;
+  /* box-shadow: 7px 7px 7px rgb(0, 0, 0); */
+  box-shadow: 7px 7px 7px 7px rgb(0, 0, 0);
+}
+
+#titleCol {
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  /* padding: 0 0 0 0; */
+  margin: 2% 2% 2% 2%;
+  /* box-shadow: 7px 7px 7px rgb(0, 0, 0); */
+  box-shadow: 7px 7px 7px 7px rgb(0, 0, 0);
+}
+
 #title {
   font-weight: bold;
   text-align: center;
   justify-content: center;
-  transition-delay: 2s;
+  width: 100%;
+  margin: 2% 0 2% 0;
+  height: fit-content;
+  /* box-shadow: 7px 7px 7px rgb(0, 0, 0); */
+  box-shadow: 7px 7px 7px 7px rgb(0, 0, 0);
 }
 
-#startBox,
+h1 {
+  font-size: 3.6rem;
+}
+
+#startContainer {
+  padding: 0 0 0 0;
+  height: fit-content;
+  margin: 0 0 2% 0;
+  /* box-shadow: 7px 7px 7px rgb(0, 0, 0); */
+  box-shadow: 7px 7px 7px 7px rgb(0, 0, 0);
+}
+
+#startRow {
+  text-align: center;
+  justify-content: center;
+  height: fit-content;
+  margin: 2% 2% 2% 2%;
+  padding: 0 0 0 0;
+  /* box-shadow: 7px 7px 7px rgb(0, 0, 0); */
+  box-shadow: 7px 7px 7px 7px rgb(0, 0, 0);
+}
+
+#startCol {
+  text-align: center;
+  justify-content: center;
+  height: fit-content;
+  margin: 2% 2% 2% 2%;
+  /* opacity: 0; */
+  /* box-shadow: 7px 7px 7px rgb(0, 0, 0); */
+  box-shadow: 7px 7px 7px 7px rgb(0, 0, 0);
+}
+
 #startButton {
   text-align: center;
   justify-content: center;
+  width: 100%;
+  margin: 2% 0 2% 0;
+  /* height: 100%; */
+}
+
+h2 {
+  font-size: 2rem;
 }

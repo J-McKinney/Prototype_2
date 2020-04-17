@@ -188,7 +188,7 @@ class Dictaphone extends Component {
 
     return (
       <>
-        <div id="wrapper">
+        <div id="speechWrapper">
           <Container id="randomWordContainer">
             <Row id="randomWordRow">
               <Col id="randomWordCol">

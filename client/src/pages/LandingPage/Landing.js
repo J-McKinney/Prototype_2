@@ -1,19 +1,20 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+// import Fade from "react-reveal/Fade";
 import "./Landing.css";
 
-// var context;
-
 // window.onload = function () {
-//   context = new AudioContext();
+//   var context = new AudioContext();
 //   // Setup all nodes
-//   console.log(context);
+//   // console.log(context);
 // };
+
+var AudioContext = window.AudioContext || window.webkitAudioContext;
+var audioContext = new AudioContext();
 
 class Landing extends Component {
   constructor(props) {
@@ -24,13 +25,18 @@ class Landing extends Component {
   }
 
   componentDidMount() {
-    // console.log(context);
+    // console.log(audioContext);
   }
   componentDidUpdate() {
+    audioContext.resume();
     // console.log(context);
   }
 
   Listening = () => {
+    if (!audioContext) {
+      audioContext = new AudioContext();
+    }
+    audioContext.resume();
     // context.resume().then(() => {
     console.log("Playback resumed successfully");
     // });
@@ -39,23 +45,29 @@ class Landing extends Component {
   render() {
     return (
       <>
-        <Jumbotron>
-          <Container>
-            <Row>
-              <Col>
-                <h1 id="title">SimilTune</h1>
+        <div id="landingWrapper">
+          <Container id="titleContainer">
+            <Row id="titleRow">
+              <Col id="titleCol">
+                <div id="title">
+                  <h1>SimilTune</h1>
+                </div>
+                {/*<h1 id="title"><Fade>SimilTune</Fade></h1>*/}
               </Col>
             </Row>
           </Container>
-        </Jumbotron>
-        <hr />
-        <Container id="startBox">
-          <Link to="/game">
-            <Button id="startButton" onClick={this.Listening}>
-              Press Here To Start
-            </Button>
-          </Link>
-        </Container>
+          <Container id="startContainer">
+            <Row id="startRow">
+              <Col id="startCol">
+                <Link to="/game">
+                  <Button id="startButton" onClick={this.Listening}>
+                    <h2>Press Here To Start</h2>
+                  </Button>
+                </Link>
+              </Col>
+            </Row>
+          </Container>
+        </div>
       </>
     );
   }
