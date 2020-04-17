@@ -7,7 +7,35 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import "./Landing.css";
 
+// var context;
+
+// window.onload = function () {
+//   context = new AudioContext();
+//   // Setup all nodes
+//   console.log(context);
+// };
+
 class Landing extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+
+    this.Listening = this.Listening.bind(this);
+  }
+
+  componentDidMount() {
+    // console.log(context);
+  }
+  componentDidUpdate() {
+    // console.log(context);
+  }
+
+  Listening = () => {
+    // context.resume().then(() => {
+    console.log("Playback resumed successfully");
+    // });
+  };
+
   render() {
     return (
       <>
@@ -15,16 +43,7 @@ class Landing extends Component {
           <Container>
             <Row>
               <Col>
-                <h1 id="title">Simil-tune</h1>
-              </Col>
-              <Col>
                 <h1 id="title">SimilTune</h1>
-              </Col>
-              <Col>
-                <h1 id="title">Similtune</h1>
-              </Col>
-              <Col>
-                <h1 id="title">Simil-Tune</h1>
               </Col>
             </Row>
           </Container>
@@ -32,7 +51,9 @@ class Landing extends Component {
         <hr />
         <Container id="startBox">
           <Link to="/game">
-            <Button id="startButton">Press Here To Start</Button>
+            <Button id="startButton" onClick={this.Listening}>
+              Press Here To Start
+            </Button>
           </Link>
         </Container>
       </>

@@ -7,7 +7,13 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import "./SpeechRecognition.css";
 
+// var context;
 
+// window.onload = function () {
+//   context = new AudioContext();
+//   // Setup all nodes
+//   console.log(context);
+// };
 
 //------------------------SPEECH RECOGNITION-----------------------------
 
@@ -47,9 +53,10 @@ class Dictaphone extends Component {
   }
   componentDidMount() {
     recognition.stop();
+    // console.log(context);
   }
   componentDidUpdate() {
-    
+    // console.log(context);
   }
 
   // Toggle listening commands when the Start/Stop button is pressed

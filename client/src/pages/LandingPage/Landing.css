@@ -1,5 +1,8 @@
 #title {
   font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  transition-delay: 2s;
 }
 
 #startBox,
