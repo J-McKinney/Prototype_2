@@ -1,0 +1,9 @@
+#title {
+  font-weight: bold;
+}
+
+#startBox,
+#startButton {
+  text-align: center;
+  justify-content: center;
+}

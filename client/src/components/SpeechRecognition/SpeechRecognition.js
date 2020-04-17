@@ -7,6 +7,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import "./SpeechRecognition.css";
 
+
+
 //------------------------SPEECH RECOGNITION-----------------------------
 
 var SpeechRecognition =
@@ -20,24 +22,6 @@ recognition.lang = "en-US";
 let finalTranscript = "";
 let interimTranscript = "";
 let randomWordArr = ["Incredible"];
-
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-  //   console.log("It's Working!");
-  navigator.mediaDevices
-    .getUserMedia({ audio: true })
-    // Success callback
-    .then(function (stream) {
-      var mediaRecorder = new MediaRecorder(stream);
-        mediaRecorder.start();
-      // console.log(mediaRecorder);
-    })
-    // Error callback
-    .catch(function (err) {
-      console.log("The following getUserMedia error occured: " + err);
-    });
-} else {
-  console.log("getUserMedia not supported on your browser!");
-}
 
 //------------------------COMPONENT-----------------------------
 class Dictaphone extends Component {
@@ -61,8 +45,12 @@ class Dictaphone extends Component {
     this.randomWordGenerator = this.randomWordGenerator.bind(this);
     // this.randomColorGenerator = this.randomColorGenerator.bind(this);
   }
-  componentDidMount() {}
-  componentDidUpdate() {}
+  componentDidMount() {
+    recognition.stop();
+  }
+  componentDidUpdate() {
+    
+  }
 
   // Toggle listening commands when the Start/Stop button is pressed
   toggleListen = () => {
@@ -116,27 +104,11 @@ class Dictaphone extends Component {
       ).innerHTML = interimTranscript;
       document.getElementById("finalTranscript").innerHTML = finalTranscript;
 
-      //-------------------------COMMANDS------------------------------------
-      // speech recognition
-      // If the user says and the SpeechRec recognizes, "stop listening", the program turns off the recorder
-      // and stops listening if no space between the double quotes in this block then, the program reads
-      // everything like one big long sentence instead of individual strings
       const transcriptArr = finalTranscript.split("  ");
-      // const stopCmd = transcriptArr.slice(-3, -1);
-      // console.log("stopCmd", stopCmd);
-      // if (stopCmd[0] === "stop" && stopCmd[1] === "listening") {
-      //   recognition.stop();
-      //   recognition.onend = () => {
-      //     const finalText = transcriptArr.slice(0, -3).join(" ");
-      //     document.getElementById("finalTranscript").innerHTML = finalText;
-      //   };
-      // }
       this.setState({ sentence: transcriptArr[0] });
       // console.log(transcriptArr[0]);
     };
 
-    //-----------------------------------------------------------------------
-    // speech recognition
     recognition.onerror = (event) => {
       console.log("Error occurred in recognition: " + event.error);
     };
