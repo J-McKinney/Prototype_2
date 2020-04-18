@@ -53,6 +53,7 @@
 }
 
 #randomWordPlacement {
+  font-family: "Bangers", cursive;
   color: white;
   text-align: center;
   justify-content: center;
@@ -81,6 +82,7 @@
 }
 
 #newWordText {
+  font-family: "Bangers", cursive;
   font-size: 1.5rem;
   /* box-shadow: 7px 7px 7px 7px rgb(0, 0, 0); */
 }

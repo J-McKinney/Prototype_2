@@ -93,6 +93,8 @@ h1 {
 }
 
 #instructionsButton {
+  font-family: "Bangers", cursive;
+  font-weight: bold;
   text-align: center;
   justify-content: center;
   font-weight: bold;
@@ -114,6 +116,7 @@ h1 {
 }
 
 #licenseButton {
+  font-family: "Bangers", cursive;
   text-align: center;
   justify-content: center;
   font-weight: bold;
@@ -154,6 +157,7 @@ h1 {
 }
 
 #startButton {
+  font-family: "Bangers", cursive;
   text-align: center;
   justify-content: center;
   width: 100%;
