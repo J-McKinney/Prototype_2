@@ -50,12 +50,28 @@ class Landing extends Component {
             <Row id="titleRow">
               <Col id="titleCol">
                 <div id="title">
-                  <h1>SimilTune</h1>
+                  <h1>
+                    <i id="iTunesNote" className="fab fa-itunes-note"></i>
+                    &nbsp;&nbsp; SimilTune &nbsp;&nbsp;
+                    <i id="iTunesNote" className="fab fa-itunes-note"></i>
+                  </h1>
                 </div>
                 {/*<h1 id="title"><Fade>SimilTune</Fade></h1>*/}
               </Col>
             </Row>
           </Container>
+
+          <Container id="infoContainer">
+            <Row id="infoRow">
+              <Col id="instructionsCol">
+                <Button id="instructionsButton">Instructions</Button>
+              </Col>
+              <Col id="licenseCol">
+                <Button id="licenseButton">License</Button>
+              </Col>
+            </Row>
+          </Container>
+
           <Container id="startContainer">
             <Row id="startRow">
               <Col id="startCol">

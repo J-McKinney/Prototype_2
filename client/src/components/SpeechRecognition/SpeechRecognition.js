@@ -7,6 +7,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import "./SpeechRecognition.css";
 
+require("dotenv").config();
+
 // var context;
 
 // window.onload = function () {
@@ -189,6 +191,11 @@ class Dictaphone extends Component {
     return (
       <>
         <div id="speechWrapper">
+          <Container id="exitContainer">
+            <Button id="exitButton">
+              <h6>X</h6>
+            </Button>
+          </Container>
           <Container id="randomWordContainer">
             <Row id="randomWordRow">
               <Col id="randomWordCol">
@@ -200,9 +207,9 @@ class Dictaphone extends Component {
           </Container>
           <Container>
             <Row id="randomWordButtonRow">
-              {/* changed onClick laptop/desktop to onTouchStart mobile */}
+              {/* change onClick laptop/desktop to onTouchStart mobile */}
               <Button id="randomWordButton" onClick={this.randomWordGenerator}>
-                <div id="newWordText">Click For New Word</div>
+                <div id="newWordText">NewWord/Timer</div>
               </Button>
             </Row>
             <Row id="oscilloscopeRow">
@@ -210,13 +217,13 @@ class Dictaphone extends Component {
                 <ReactMic
                   className="oscilloscope"
                   record={isRecording}
-                  backgroundColor="#525252"
+                  backgroundColor="#ffffff"
                   visualSetting="frequencyBars"
                   audioBitsPerSecond={128000}
                   onStop={this.onStop}
                   onSave={this.onSave}
                   onBlock={this.onBlock}
-                  strokeColor="#4bf7f7"
+                  strokeColor="#00ff0db4"
                 />
                 <div id="audio-playback-controls">
                   <audio
