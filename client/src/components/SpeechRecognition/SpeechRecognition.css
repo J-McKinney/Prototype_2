@@ -14,11 +14,23 @@
 }
 
 #exitContainer {
-  box-shadow: 7px 7px 7px 7px rgb(0, 0, 0);
+  margin: 0 0 0 auto;
+  padding: 0 0 0 0;
+  /* box-shadow: 7px 7px 7px 7px rgb(0, 0, 0); */
 }
 
 #exitButton {
-  box-shadow: 7px 7px 7px 7px rgb(0, 0, 0);
+  float: right;
+  /* margin: 0 0 0 0; */
+  padding: .5% .5% 0 .5%;
+  /* box-shadow: 7px 7px 7px 7px rgb(0, 0, 0); */
+}
+
+#X {
+  width: fit-content;
+  height: fit-content;
+  font-weight: bold;
+  /* box-shadow: 7px 7px 7px 7px rgb(0, 0, 0); */
 }
 
 #randomWordContainer {
@@ -46,7 +58,7 @@
   justify-content: center;
   font-weight: bold;
   font-size: 3.6rem;
-  margin: 4% 0 0 0;
+  margin: 3% 0 0 0;
   /* box-shadow: 7px 7px 7px 7px rgb(0, 0, 0); */
 }
 

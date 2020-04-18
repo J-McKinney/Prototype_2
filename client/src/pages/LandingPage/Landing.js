@@ -50,11 +50,7 @@ class Landing extends Component {
             <Row id="titleRow">
               <Col id="titleCol">
                 <div id="title">
-                  <h1>
-                    <i id="iTunesNote" className="fab fa-itunes-note"></i>
-                    &nbsp;&nbsp; SimilTune &nbsp;&nbsp;
-                    <i id="iTunesNote" className="fab fa-itunes-note"></i>
-                  </h1>
+                  <h1>SimilTune</h1>
                 </div>
                 {/*<h1 id="title"><Fade>SimilTune</Fade></h1>*/}
               </Col>
@@ -77,7 +73,11 @@ class Landing extends Component {
               <Col id="startCol">
                 <Link to="/game">
                   <Button id="startButton" onClick={this.Listening}>
-                    <h2>Press Here To Start</h2>
+                    <h2>
+                      <i id="iTunesNote" className="fab fa-itunes-note"></i>
+                      &nbsp; &nbsp; Start &nbsp; &nbsp;
+                      <i id="iTunesNote" className="fab fa-itunes-note"></i>
+                    </h2>
                   </Button>
                 </Link>
               </Col>

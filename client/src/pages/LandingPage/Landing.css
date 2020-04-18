@@ -93,14 +93,15 @@ h1 {
 }
 
 #instructionsButton {
+  text-align: center;
+  justify-content: center;
   font-weight: bold;
   font-size: 1.25rem;
   color: #101f3e;
-  text-align: center;
   margin: 2% 0 2% 0;
   background-color: #0c7d86;
   border-color: #53725e;
-  width: 50%;
+  width: 90%;
   /* box-shadow: 7px 7px 7px 7px rgb(0, 0, 0); */
 }
 
@@ -113,14 +114,15 @@ h1 {
 }
 
 #licenseButton {
+  text-align: center;
+  justify-content: center;
   font-weight: bold;
   font-size: 1.25rem;
   color: #101f3e;
-  text-align: center;
   margin: 2% 0 2% 0;
   background-color: #0c7d86;
   border-color: #53725e;
-  width: 50%;
+  width: 90%;
   /* box-shadow: 7px 7px 7px 7px rgb(0, 0, 0); */
 }
 

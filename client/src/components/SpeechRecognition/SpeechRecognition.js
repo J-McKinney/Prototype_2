@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { ReactMic } from "react-mic";
 import API from "../../utils/API";
 import Button from "react-bootstrap/Button";
@@ -192,9 +193,11 @@ class Dictaphone extends Component {
       <>
         <div id="speechWrapper">
           <Container id="exitContainer">
-            <Button id="exitButton">
-              <h6>X</h6>
-            </Button>
+            <Link to="/">
+              <Button id="exitButton">
+                <h6 id="X">X</h6>
+              </Button>
+            </Link>
           </Container>
           <Container id="randomWordContainer">
             <Row id="randomWordRow">
