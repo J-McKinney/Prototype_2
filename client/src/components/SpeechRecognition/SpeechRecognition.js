@@ -26,7 +26,7 @@ var recognition = new SpeechRecognition();
 
 recognition.continous = false;
 recognition.maxAlternatives = 10;
-recognition.interimResults = true;
+recognition.interimResults = false;
 recognition.lang = "en-US";
 let finalTranscript = "";
 let interimTranscript = "";
