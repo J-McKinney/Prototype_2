@@ -8,8 +8,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import "./SpeechRecognition.css";
 
-require("dotenv").config();
-
 // var context;
 
 // window.onload = function () {
@@ -24,9 +22,9 @@ var SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
 
-recognition.continous = false;
+recognition.continous = true;
 recognition.maxAlternatives = 10;
-recognition.interimResults = false;
+recognition.interimResults = true;
 recognition.lang = "en-US";
 let finalTranscript = "";
 let interimTranscript = "";
