@@ -24,7 +24,7 @@ var SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
 
-recognition.continous = true;
+recognition.continous = false;
 recognition.maxAlternatives = 10;
 recognition.interimResults = true;
 recognition.lang = "en-US";
@@ -52,7 +52,6 @@ class Dictaphone extends Component {
     this.submitTranscripts = this.submitTranscripts.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.randomWordGenerator = this.randomWordGenerator.bind(this);
-    // this.randomColorGenerator = this.randomColorGenerator.bind(this);
   }
   componentDidMount() {
     recognition.stop();
@@ -120,6 +119,7 @@ class Dictaphone extends Component {
     };
 
     recognition.onerror = (event) => {
+      event.preventDefault();
       console.log("Error occurred in recognition: " + event.error);
     };
   };
