@@ -6,6 +6,8 @@ import Instructions from "./pages/Instructions/Instructions";
 import License from "./pages/License/License";
 import Dictaphone from "./components/SpeechRecognition/SpeechRecognition";
 import ErrorPage from "./pages/ErrorPage/Error";
+import "./App.css";
+require("dotenv").config();
 
 function App() {
   return (
